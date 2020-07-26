@@ -1,4 +1,4 @@
-import cv2
+import cv2 
 import numpy as np
 from keras.models import load_model
 
@@ -10,7 +10,7 @@ GR_dict={0:(0,0,255),1:(0,255,0)}
 rect_size = 4
 cap = cv2(0)
 
-haarcascade = cv2.CascadeClassifier(/home/user_name/.local/lib/python3.6/site-packages/cv2/data/haarcascade_frontalface_default.xml)
+haarcascade = cv2.CascadeClassifier('/home/rebel/.local/lib/python3.8/site-packages/cv2/data/haarcascade_frontalface_default.xml')
 
 while True:
     (rval, im) = cap.read()
@@ -33,7 +33,7 @@ while True:
         cv2.rectangle(im, (x,y),(x+w,y+h), GR_dict[label], 2)
         cv2.rectangle(im,(x,y-40),(x+w,y),GR_dict[label],-1)
         cv2.putText(im, results[label], (x, y-10),cv2.FONT_HERSHEY_SIMPLEX,0.8,(255,255,255),2)
-        
+
     cv2.imshow('LIVE',   im)
     key = cv2.waitKey(10)
     
