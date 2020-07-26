@@ -1,6 +1,9 @@
 import cv2 
 import numpy as np
 from keras.models import load_model
+import sys
+
+sys.path.append('/usr/local/lib/python3.8/site-packages')
 
 model=load_models("./model-010.h5")
 
@@ -10,7 +13,7 @@ GR_dict={0:(0,0,255),1:(0,255,0)}
 rect_size = 4
 cap = cv2(0)
 
-haarcascade = cv2.CascadeClassifier('/home/rebel/.local/lib/python3.8/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+haarcascade = cv2.CascadeClassifier('/home/rebel/local/lib/python3.8/site-packages/cv2/data/haarcascade_frontalface_default.xml')
 
 while True:
     (rval, im) = cap.read()
