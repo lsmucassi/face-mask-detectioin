@@ -1,12 +1,13 @@
 import cv2
 import numpy as np
-from keras import models
-# from keras.models import load_model
+# from keras import models
+from keras.models import load_model
 import sys
 
 sys.path.append('/usr/local/lib/python3.8/site-packages')
 
-model = models.load_models("./model-010.h5")
+# model = models.load_weight('./model-010.h5')
+model = load_models("./model-010.h5")
 
 results={0:'without mask',1:'mask'}
 GR_dict={0:(0,0,255),1:(0,255,0)}
